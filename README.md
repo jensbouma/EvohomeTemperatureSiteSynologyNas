@@ -16,7 +16,7 @@ Log Evohome temperature and host graph on own site
 
 
   - First set up your webserver and create a mysql database.
-  - You need to have a column with the name "Time" and default value CURRENT_TIMESTAMP
+  - You need to have a column with the name "Time" and default value CURRENT_TIMESTAMP *Use a Capital for Time
   - You also need to have a column for each room in your house (it's easy if you name the columns the same like you did for the rooms in the evohome system)
   
   - Then you need to edit 3 files
@@ -31,6 +31,3 @@ Log Evohome temperature and host graph on own site
     - index.html
       - line 19: correct http adress for DataLoader.php
       - line 39 to ...: fill in correct room names (title and valueField), also add the rooms here and choose different color (lineColor)
-
-
-Logging the data and the reading to json is working but the index.html doesn't draw lines yet.
