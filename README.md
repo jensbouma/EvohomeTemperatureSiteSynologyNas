@@ -1,7 +1,19 @@
 # EvohomeTemperatureSite
 Log Evohome temperature and host graph on own site
 
-- Simple Guide
+
+  - Prepare Synology, ssh to Synology diskstation
+      - sudo su
+      - sudo curl -k https://bootstrap.pypa.io/get-pip.py | python
+      - pip install requests
+      - pip install pymysql
+      - pip install EvohomeClient
+  - Edit Cronjob
+      - sudo vi /etc/crontab
+        - add: */5 * * * * root    /pathto/TemperatureLogging.py >> /pathto/cron.log
+        - exit with ctrl+c > : > wq!
+      - sudo /usr/syno/sbin/synoservicectl --restart crond
+
 
   - First set up your webserver and create a mysql database.
   - You need to have a column with the name "Time" and default value CURRENT_TIMESTAMP
@@ -19,11 +31,3 @@ Log Evohome temperature and host graph on own site
     - index.html
       - line 19: correct http adress for DataLoader.php
       - line 39 to ...: fill in correct room names (title and valueField), also add the rooms here and choose different color (lineColor)
-  
-  - Last thing you need to do is make a cron job for TemperatureLogging.py that runs every 5 minutes
-  
-
-
-That's it. Have fun!
-
-TIP: You can click on the names in the graph, then you can see the different graphs separately
