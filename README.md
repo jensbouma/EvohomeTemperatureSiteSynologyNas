@@ -1,22 +1,26 @@
 # Evohome Temperature Site working on Synology Diskstation
 Log Evohome temperature and host graph on own site
 
+This is the edited version of https://github.com/PieterVO/EvohomeTemperatureSite working on a Synology Diskstation
+Fix: I changed the moduele MySQLdb to pymysql and rewrite the instalation steps.
 
-  - Prepare Synology, ssh to Synology diskstation
+
+  - Prepare te synology
+      - (ssh to Synology diskstation)
       - sudo su
       - sudo curl -k https://bootstrap.pypa.io/get-pip.py | python
       - pip install requests
       - pip install pymysql
       - pip install EvohomeClient
   - Edit Cronjob
-      - sudo vi /etc/crontab
+      - sudo vi /etc/crontab (i = insert)
         - add: */5 * * * * root    /pathto/TemperatureLogging.py >> /pathto/cron.log
-        - exit with ctrl+c > : > wq!
+        - (exit with ctrl+c > : > wq!)
       - sudo /usr/syno/sbin/synoservicectl --restart crond
 
 
-  - First set up your webserver and create a mysql database.
-  - You need to have a column with the name "Time" and default value CURRENT_TIMESTAMP *Use a Capital for Time
+  - Sset up your webserver and create a mysql database.
+  - You need to have a column with the name "Time" and default value CURRENT_TIMESTAMP (Use a capital for Time!)
   - You also need to have a column for each room in your house (it's easy if you name the columns the same like you did for the rooms in the evohome system)
   
   - Then you need to edit 3 files
