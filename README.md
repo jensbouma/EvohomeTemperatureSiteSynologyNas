@@ -1,4 +1,4 @@
-# EvohomeTemperatureSite
+# Evohome Temperature Site working on Synology Diskstation
 Log Evohome temperature and host graph on own site
 
 
@@ -31,3 +31,6 @@ Log Evohome temperature and host graph on own site
     - index.html
       - line 19: correct http adress for DataLoader.php
       - line 39 to ...: fill in correct room names (title and valueField), also add the rooms here and choose different color (lineColor)
+
+
+Logging the data and the reading to json is working but the index.html doesn't draw lines yet.
