@@ -5,13 +5,14 @@ import requests
 import json
 import datetime
 import time
-import MySQLdb
+#import MySQLdb
+import pymysql
 from evohomeclient2 import EvohomeClient
 
 
 client = EvohomeClient('evohome_username', 'evohome_password')
 # Open database connection
-db = MySQLdb.connect("127.0.0.1","username","password","name_mysql_database",port )
+db = MySQLdb.connect("synologyexternalipadress","username","password","name_mysql_database",port )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
