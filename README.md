@@ -13,7 +13,7 @@ Fix: I changed the moduele MySQLdb to pymysql and rewrite the instalation steps.
       - pip install pymysql
       - pip install EvohomeClient
   
-* For some reason, after updating DSM the requrements has to be installed again. 
+  For some reason, after updating DSM the requrements has to be installed again. 
 
   - Edit Cronjob
       - sudo vi /etc/crontab (i = insert)
