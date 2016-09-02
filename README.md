@@ -12,6 +12,9 @@ Fix: I changed the moduele MySQLdb to pymysql and rewrite the instalation steps.
       - pip install requests
       - pip install pymysql
       - pip install EvohomeClient
+  
+* For some reason, after updating DSM the requrements has to be installed again. 
+
   - Edit Cronjob
       - sudo vi /etc/crontab (i = insert)
         - add: */5 * * * * root    /pathto/TemperatureLogging.py >> /pathto/cron.log
